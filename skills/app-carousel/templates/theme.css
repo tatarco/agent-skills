@@ -1,0 +1,73 @@
+/* Override these per project — pull them from the app's OWN code so the slides and the
+   product look like the same thing. That is the whole credibility trick. */
+:root {
+  --ink: #0B0B0C;
+  --surface: #141416;
+  --cream: #F5F3EF;
+  --muted: #8C8A93;
+  --accent: #D63A36;
+  --gold: #F4C15D;
+  --line: #2A2A2E;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  width: 1080px; height: 1350px;
+  background: var(--ink); color: var(--cream);
+  font-family: var(--font);
+  display: flex; flex-direction: column;
+  padding: 72px 72px 48px;
+  overflow: hidden;                 /* nothing is allowed to bleed off a slide */
+}
+
+main { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+
+.kicker {
+  color: var(--gold); font-size: 20px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; margin-bottom: 18px;
+}
+h1 {
+  font-size: 62px; font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.02em; margin-bottom: 18px;
+}
+.body { font-size: 27px; line-height: 1.45; color: var(--muted); max-width: 90%; }
+.body b, .body strong { color: var(--cream); font-weight: 600; }
+
+/* the screenshot */
+.shot {
+  position: relative; flex: 1; min-height: 0; margin-top: 34px;
+  display: flex; align-items: center; justify-content: center;
+}
+.shot img {
+  max-width: 100%; max-height: 100%;
+  object-fit: contain;              /* never distort a real screenshot */
+  border-radius: 16px; border: 1px solid var(--line);
+  box-shadow: 0 30px 70px rgba(0,0,0,.55);
+}
+
+/* annotation pills laid over the screenshot */
+.pin {
+  position: absolute; background: var(--accent); color: #fff;
+  font-size: 21px; font-weight: 700; padding: 10px 18px; border-radius: 999px;
+  white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,.5);
+}
+
+footer {
+  display: flex; justify-content: space-between; align-items: center;
+  color: #58565E; font-size: 18px; letter-spacing: .08em;
+  border-top: 1px solid var(--line); padding-top: 20px; margin-top: 28px;
+}
+
+/* --- slide kinds --- */
+.k-cover { justify-content: center; }
+.k-cover h1 { font-size: 84px; }
+.k-cover main { justify-content: center; }
+
+.k-quote main { justify-content: center; }
+.k-quote h1 { font-size: 68px; color: var(--gold); }
+
+.k-cta main { justify-content: center; }
+.k-cta h1 { font-size: 72px; }
+.k-cta .body { font-size: 30px; color: var(--cream); }

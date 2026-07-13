@@ -1,0 +1,37 @@
+{
+  "_comment": "Drive the app. NEVER put a password here — see SKILL.md on lifting a session.",
+
+  "viewport": { "width": 430, "height": 932 },
+  "device_scale_factor": 3,
+  "locale": "en-US",
+
+  "_storage_comment": "Paste the user's localStorage from their own logged-in tab. Replayed before app code runs.",
+  "storage": {},
+
+  "_dismiss_comment": "Extra overlay-dismiss labels beyond the defaults.",
+  "dismiss": [],
+
+  "steps": [
+    {
+      "name": "01-home",
+      "goto": "http://localhost:5173/",
+      "wait": 3000,
+      "full_page": false
+    },
+    {
+      "name": "02-flow-step",
+      "goto": "http://localhost:5173/#/some-route",
+      "wait": 3000,
+      "click": ["button:has-text('Open')"],
+      "scroll": 400,
+      "_blur_comment": "Blur IN THE PAGE before the shot — far more reliable than OCR afterwards.",
+      "blur": [".customer-name", ".phone", "[data-secret]"]
+    },
+    {
+      "name": "03-detail",
+      "goto": "http://localhost:5173/#/detail",
+      "wait": 3000,
+      "shot_selector": ".main-card"
+    }
+  ]
+}

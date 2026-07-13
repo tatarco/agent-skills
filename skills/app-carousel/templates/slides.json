@@ -1,0 +1,52 @@
+{
+  "_comment": "6-12 slides. Slide 1 must work with zero context. Last slide has ONE ask.",
+
+  "font_href": "https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap",
+
+  "_theme_comment": "Pull these from the target app's own code so slides and product match.",
+  "theme_vars": {
+    "--accent": "#D63A36",
+    "--gold": "#F4C15D",
+    "--ink": "#060202"
+  },
+
+  "slides": [
+    {
+      "kind": "cover",
+      "kicker": "Project name",
+      "title": "The hook — a problem, not a feature.",
+      "body": "One line that makes someone stop scrolling.",
+      "brand": "YOUR BRAND"
+    },
+    {
+      "kind": "shot",
+      "kicker": "The problem",
+      "title": "What was broken",
+      "image": "clean/01-home.png",
+      "annotations": [
+        { "text": "this is the pain", "top": "22%", "side": "right", "offset": "4%" }
+      ],
+      "brand": "YOUR BRAND"
+    },
+    {
+      "kind": "shot",
+      "kicker": "The build",
+      "title": "What we shipped",
+      "body": "Real screen. Not a mockup.",
+      "image": "clean/02-flow-step.png",
+      "brand": "YOUR BRAND"
+    },
+    {
+      "kind": "quote",
+      "title": "The line you want them to repeat.",
+      "brand": "YOUR BRAND"
+    },
+    {
+      "kind": "cta",
+      "kicker": "Your turn",
+      "title": "Want this for your product?",
+      "body": "yourbrand.com",
+      "brand": "YOUR BRAND"
+    }
+  ]
+}
