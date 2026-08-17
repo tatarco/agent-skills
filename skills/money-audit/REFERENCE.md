@@ -67,7 +67,9 @@ JOIN latest l ON l.account_number=a.account_number AND l.rd=a.reference_date;
 
 **Balance types.** An account carries several balances; a forward-dated `expected` will beat a current `closingBooked` if you take the first one. The script picks the latest `closingBooked` and falls back only if there is none.
 
-**Interest is not a transaction anyone recognises.** It arrives as a fee line on the card, not as a merchant. Read the loan/credit account fields for the rate, then compute the monthly cost yourself - the person has never seen that number written down.
+**Interest is not a transaction at all.** Revolving interest is already inside the carried balance - it is not a merchant, not a fee row, not anything a transaction query will return. Read the rate off the credit/loan account fields, then compute the monthly cost yourself and the doubling time (`ln 2 / ln(1+r)`); the person has never seen either number written down. This is the highest-value finding in a household audit and the only one invisible to every budgeting app, because they all read transactions.
+
+**Insurance duplication is not automatically waste.** Reimbursement clauses (שיפוי) pay an incurred expense once regardless of how many policies cover it. Compensation clauses (פיצוי - long-term care, critical illness) pay a fixed sum from every insurer in parallel. Classify each policy before recommending a cancellation.
 
 ## The verification pass
 

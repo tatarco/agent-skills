@@ -63,10 +63,10 @@ One row per transaction, person and account already joined, duplicates excluded.
 
 In one real household, none of it visible from any single statement:
 
-- A revolving card at 17.7% that has been rolling since 2006, its interest never appearing as a line item anyone reads.
+- A revolving card at 17.7% rolling since 2006 - the single most valuable find, and the hardest. It has **no schedule and no end date**, doubles every 4.3 years, is not a line item on any statement (the interest is already inside the balance), and is not a charge, so no transaction search will ever surface it. Look in the account fields, not the transactions.
 - Idle cash in checking, earning nothing, larger than half the debt it could kill.
 - PayPal **billing agreements** - not subscriptions - still authorised for suppliers the person forgot ordering from years ago. They renew without a merchant email.
-- Three private health policies stacked on the public fund, all paying out for the same event once.
+- Stacked private health policies. **Do not call this waste before sorting the clauses:** reimbursement cover (שיפוי - surgery, medication) pays once no matter how many policies exist, but compensation cover (פיצוי - long-term care, critical illness) pays in full from *every* insurer holding one. Cancelling a "duplicate" compensation policy destroys real money.
 - Weekly app-store fleeceware, which the companion [`subscription-audit`](../subscription-audit/) skill kills and claims refunds for.
 
 ## Before you present anything
