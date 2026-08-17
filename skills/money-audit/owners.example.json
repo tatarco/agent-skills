@@ -1,0 +1,18 @@
+{
+  "_comment": "Copy to owners.json (git-ignored). Maps the owner string a bank returns in accounts.ownerInfo.fullName to a person. Matching order: account_ids (exact, always wins) > national_ids > names. Name matching is order-insensitive, so 'Dana Cohen' and 'Cohen Dana' both match - but Hebrew and Latin spellings are DIFFERENT strings, list both or you will lose a card. A joint account arrives as one comma-joined string and is split, so every party gets a row. Run `openbank.py owners` to see every string the banks actually returned, add the unmapped ones here, re-run `openbank.py pull`.",
+  "default_person": null,
+  "people": {
+    "dana": {
+      "full_name": "Dana Cohen",
+      "names": ["דנה כהן", "Dana Cohen", "DANA COHEN"],
+      "national_ids": [],
+      "account_ids": []
+    },
+    "yossi": {
+      "full_name": "Yossi Cohen",
+      "names": ["יוסי כהן", "Yossi Cohen", "YOSSI COHEN"],
+      "national_ids": [],
+      "account_ids": ["pin_an_account_here_when_the_owner_string_is_a_product_name"]
+    }
+  }
+}

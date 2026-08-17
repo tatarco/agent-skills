@@ -18,6 +18,30 @@ cp -R agent-skills/skills/app-carousel ~/.claude/skills/
 
 ## Skills
 
+### money-audit
+
+Pull a household's real bank, card and loan data into a local SQLite snapshot through an
+open-banking aggregator, attribute every account to a person, and investigate it in SQL:
+debt and its true interest rate, idle cash sitting next to expensive credit, recurring
+charges, PayPal billing agreements, duplicated insurance.
+
+Two traps are documented because both produce confidently wrong numbers: a revolving card
+that reports as **many monthly snapshots of itself** (summing them multiplied one debt by
+10x), and bilingual owner strings that silently drop whole cards from a total. The
+verification protocol - re-derive every finding independently, and check the mailbox before
+calling any merchant a scam - is the point of the skill, not the pipeline.
+
+It is not free: an aggregator subscription (~ILS 49/mo in Israel, PSD2 AISP elsewhere) plus
+real model time. A two-person, nine-institution audit ran ~2,000 assistant turns.
+
+```bash
+cp -R agent-skills/skills/money-audit ~/.claude/skills/
+```
+
+Pairs with `subscription-audit`, which cancels what this finds and claims the refunds.
+
+Write-up: https://gal.tidhar.org.il/blog/money-audit/
+
 ### subscription-audit
 
 Audit a family member's mailbox, app stores and invoice PDFs for recurring charges they no
