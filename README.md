@@ -18,6 +18,30 @@ cp -R agent-skills/skills/app-carousel ~/.claude/skills/
 
 ## Skills
 
+### subscription-audit
+
+Audit a family member's mailbox, app stores and invoice PDFs for recurring charges they no
+longer want or never knew about, then cancel them and claim refunds. Ranks senders by
+frequency instead of reading anyone's mail, harvests and parses invoice PDFs (the amounts
+are almost never in the email body), and drives the real account pages to cancel.
+
+Finds the things people miss: fleeceware billed **weekly**, the same product subscribed to
+twice, "continuation discounts" that expire and double the price, geo-dead features
+(US-only roadside assistance sold in Israel), zero-usage subscriptions, and charges folded
+into a phone bill that have nothing to do with phone service.
+
+Two rules are baked in: **nothing is cancelled without item-by-item approval**, and the
+agent never claims to *be* the account holder when talking to support.
+
+```bash
+cp -R agent-skills/skills/subscription-audit ~/.claude/skills/
+```
+
+Requires the [gmail skill](https://github.com/tatarco/gmail-skill) for mailbox access and a
+browser-automation skill for the account pages.
+
+Write-up: https://gal.tidhar.org.il/blog/subscription-audit/
+
 ### app-carousel
 
 Build a LinkedIn carousel out of **receipts** — drive a live app through a real flow with
