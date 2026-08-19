@@ -99,6 +99,11 @@ Includes the clause most people leave out - a named approver, a deadline, and a 
 *"Dana, within 5 business days. If Dana is unavailable it is approved automatically and payment
 is released."* The usual way a phase stalls is not rejection, it is silence.
 
+Every phase also gets a **risk class** - `fixed`, `metered`, `gated`, `best-effort` or
+`not-a-build` - because the class decides what you can safely commit to. A phase that cannot be
+typed at all is not a build phase; the skill splits it into a short gate whose deliverable is the
+missing information, and the real phase behind it.
+
 Deliberately does **not** price anything. Typing a phase and pricing it are different jobs.
 `TEMPLATE.md` is the blank, in English and Hebrew.
 

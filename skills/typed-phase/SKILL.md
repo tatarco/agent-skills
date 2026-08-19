@@ -119,6 +119,70 @@ A phase boundary is not a line on a Gantt chart. It is where the risk changes
 hands. Before the phase, the unknowns are yours; after sign-off, they are the
 client's. Slice where you actually want that handover to happen.
 
+## Classify the risk on every phase
+
+Typing a phase tells you what it is. Classifying it tells you what you are allowed
+to promise about it. Emit a class for every phase, because the class - not your
+confidence - decides the commercial shape.
+
+| Class | When | What it means for the commitment |
+|---|---|---|
+| `fixed` | Definable, and entirely in your hands. | Safe to commit to a fixed scope and a fixed date. You wrote the signature, so you own the surface. |
+| `metered` | Depends on a system you do not control or have never seen. | Do not commit a fixed shape. Meter it against a soft cap, or make seeing the thing a precondition of quoting it. |
+| `gated` | Blocked on an approval outside both of you - an app store, a third-party review, a bank. | Carve it out as a stated caveat, start it on day one, and deliver everything else on time regardless. The waiting is not yours to fix. |
+| `best-effort` | Fragile because it depends on someone else's rules holding. | Never a core promise. Make it an explicitly optional extra, so its failure cannot take the phase down with it. |
+| `not-a-build` | Cannot be typed at all from what you know today. | Not a build phase. It is a discovery gate whose output is the information needed to type the phases after it. |
+
+### The one that matters most: not-a-build
+
+When a phase cannot be typed, the instinct is to guess and pad. Do not. Split it:
+a short gate that produces the missing information, and the real phase behind it,
+described after the gate lands.
+
+A gate is not a smaller version of the build. Its deliverable is knowledge - the
+data shape, the API's actual behaviour, the volumes, the real approval chain -
+written down well enough that the next phase can be typed from it.
+
+Say the exposure out loud when you propose it. "I cannot commit to the import
+until I have seen a real export from your system, so the first phase is looking
+at one" is a sentence that protects the client as much as it protects you.
+
+### Two phases in the same project can carry different commitments
+
+This follows from the classes, and it surprises people. A `not-a-build` gate is
+sold against a downside. A `fixed` phase is sold against a defined surface. They
+are different products, and there is no reason for them to carry the same
+commercial shape even when the calendar time is similar.
+
+Name the downside the gate removes, and its shape stops needing a defence.
+
+### Output format
+
+Add the class to the phase header:
+
+```
+Phase 2 - customer import          [metered]
+...
+```
+
+When a phase is `not-a-build`, emit the gate that has to come before it:
+
+```
+Phase 2a - look at a real export   [fixed]     <- the gate
+in:            one real export from your current system, any format
+out:           the field mapping, the row-count reality, and a written list of
+               what will not survive the import
+done when:     the mapping document exists and you have read it
+signed off by: <named person>, within 3 business days. If unavailable it is
+               approved automatically and payment is released.
+not included:  building the import
+
+Phase 2b - customer import         [blocked on 2a - cannot be typed yet]
+```
+
+This skill still does not price anything. It tells you which phases you can
+safely commit to, and which ones would be a guess wearing a number.
+
 ## Never invent a field
 
 If the input does not tell you what the acceptance criterion is, who approves,
