@@ -1,5 +1,5 @@
 ---
-name: redesign-for-mobile
+name: fe-redesign-mobile
 description: Restructure a desktop-shaped UI so it actually works on a phone — tables into cards, column triage, one fixed slot per value, progressive disclosure, and container-query breakpoints. Use when a table, data grid, dashboard row, or dense list is being made responsive, when a page "looks broken on mobile", when horizontal scroll or shrunken text appears on small screens, or when the user asks for a mobile pass / mobile fix / responsive redesign.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: ux-patterns
+name: fe-ux-patterns
 description: A library of concrete, buildable UX/UI component specs and design laws — spacing, dark mode, radius, motion timing, loading, forms, tables, toasts, dropdowns, modals, search, settings, destructive actions, and ~50 more. Use when building or reviewing ANY interface component, when a UI "looks cheap / feels off / looks AI-made", when deciding how a component should behave in its edge states, or when auditing a screen before shipping. Also loaded by /fe-gal as its component-level reference.
 ---
 
