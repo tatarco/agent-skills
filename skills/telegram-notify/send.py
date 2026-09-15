@@ -52,6 +52,7 @@ def main() -> int:
 
     token, chat = load_creds()
     url = f"https://api.telegram.org/bot{token}/sendMessage"
+    redact = lambda m: str(m).replace(token, "***")  # URLError text can carry the URL, and so the token
     data = urllib.parse.urlencode(
         {"chat_id": chat, "text": text, "disable_web_page_preview": "true"}
     ).encode()
@@ -65,7 +66,7 @@ def main() -> int:
         import shutil, subprocess
         curl = shutil.which("curl")
         if not curl:
-            sys.exit(f"ERROR: {e} (and no curl to fall back to)")
+            sys.exit(f"ERROR: {redact(e)} (and no curl to fall back to)")
         out = subprocess.run(
             [curl, "-s", "-m", str(TIMEOUT), url,
              "--data-urlencode", f"chat_id={chat}",
@@ -73,10 +74,10 @@ def main() -> int:
              "--data-urlencode", "disable_web_page_preview=true"],
             capture_output=True, text=True)
         if out.returncode:
-            sys.exit(f"ERROR: urllib failed ({e}); curl also failed: {out.stderr.strip()[:200]}")
+            sys.exit(f"ERROR: urllib failed ({redact(e)}); curl also failed: {redact(out.stderr.strip()[:200])}")
         body = json.loads(out.stdout)
     if not body.get("ok"):
-        sys.exit(f"ERROR: Telegram rejected the message: {body}")
+        sys.exit(f"ERROR: Telegram rejected the message: {redact(body)}")
     print("sent")
     return 0
 
