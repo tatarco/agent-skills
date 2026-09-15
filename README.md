@@ -110,3 +110,29 @@ Deliberately does **not** price anything. Typing a phase and pricing it are diff
 ## License
 
 MIT
+
+### fe-gal
+
+Take a frontend from ugly to genuinely good, and prove it. Concept first, kill the AI
+tells, then measure the result in a real browser instead of trusting a screenshot.
+Pairs with `fe-ux-patterns` (component-level reference) and `fe-redesign-mobile`.
+
+### fe-ux-patterns
+
+~50 concrete, buildable UX component specs and design laws - spacing, dark mode, motion
+timing, forms, tables, toasts, modals, destructive actions. Load when a UI "looks cheap".
+
+### fe-redesign-mobile
+
+Restructure a desktop-shaped UI so it works on a phone: tables into cards, column triage,
+progressive disclosure, container-query breakpoints.
+
+### repair-engine
+
+Click-to-report loop for a running app: Alt+click an element, file a GitHub issue tagged
+with the exact source `file:line`. Then drain the queue and fix each card.
+
+### telegram-notify
+
+Send yourself a Telegram message from any session - "tell me when it's done". Reads
+`TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` from env or `~/.config/telegram-notify/.env`.
