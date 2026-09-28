@@ -117,6 +117,15 @@ Take a frontend from ugly to genuinely good, and prove it. Concept first, kill t
 tells, then measure the result in a real browser instead of trusting a screenshot.
 Pairs with `fe-ux-patterns` (component-level reference) and `fe-redesign-mobile`.
 
+### fe-sweep
+
+Audit a frontend with every FE skill at once - one parallel agent per lens (taste,
+craft, a11y, motion/perf, IA, QA...) - then verify each finding in a real browser
+before fixing it. Ships `shots.js` (shared screenshots across 11 widths) and
+`measure.js` (overflow, unrevealed content, blank/unfilled images, dead anchors, tap
+targets, nav consistency). Needs puppeteer (or `PUPPETEER_PATH`). Uses `fe-gal`,
+`fe-ux-patterns`, `fe-redesign-mobile` plus whichever other FE skills are installed.
+
 ### fe-ux-patterns
 
 ~50 concrete, buildable UX component specs and design laws - spacing, dark mode, motion
