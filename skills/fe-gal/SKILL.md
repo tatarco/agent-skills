@@ -4,6 +4,8 @@ description: "Take a frontend from ugly to genuinely good, and prove it. A verif
 trigger: /fe-gal
 ---
 
+> **CSS baseline:** whenever this skill writes or reviews styles, also invoke the `good-css` skill if it is installed and follow its techniques. Where they conflict, this skill decides the look; good-css decides how the CSS is written.
+
 # /fe-gal
 
 The process that took a real client site from "it looks like shit, really" to shipped. It is
@@ -133,6 +135,11 @@ under `--virtual-time-budget`, so revealed sections photograph blank. Inject a s
 into the iframe zeroing durations and adding the revealed class, or pass
 `--force-prefers-reduced-motion`.
 
+**Read screenshots small.** A full-size PNG costs as much context as a long file. Cap every
+shot before reading it (`sips -Z 1200 shot.png`), and crop to the region under test
+(`sips -c <h> <w> --cropOffset <y> <x>`) when judging one component. Full size only when a
+pixel-level detail is the question.
+
 **Check the interaction actually fires.** Read `getComputedStyle` before and after a real
 hover rather than trusting that the selector is right. And when it does not fire, suspect a
 **stale stylesheet** before suspecting the CSS.
@@ -208,6 +215,10 @@ the page actually claims:
    component matches its spec. Run that skill's ship audit. Steps 1–5 stop a page looking
    generic; this one stops it *behaving* like a demo, which is the half users actually hit.
    Dense tables and grids also get `fe-redesign-mobile` here.
+   *Suggestion, offer it, don't force it:* where a moment deserves weight (a destructive action,
+   a payment success), propose a physical-object treatment in the style of the "Kitchen" UI
+   library: hold-to-confirm delete instead of a confirm dialog, a receipt that prints out on
+   checkout success. Use at most one or two per product, or they turn into gimmicks.
 7. **Verification pass (§5) — before claiming anything works.**
 8. Cache-bust, deploy, re-verify on the deployed URL.
 
@@ -226,6 +237,9 @@ Load alongside, in this order:
   `/fe-gal mobile` and any table, grid or dense list.
 - `fe-design-taste` — anti-slop rules and the dial system.
 - `fe-animations` — easing, timing, gesture detail.
+- `fe-apple-design` — Apple's WWDC principles for the web: springs, interruptibility, velocity
+  handoff, materials, size-specific type. Also flags the current Claude tell: huge italic serif
+  headlines on a black or cream "old money" ground.
 - `impeccable` — production quality bar and the absolute bans.
 
 `/fe-gal` is the loop that sequences them and adds the measurement discipline they assume.

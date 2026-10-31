@@ -3,9 +3,11 @@ name: fe-sweep
 description: Audit a frontend with every frontend skill at once, one agent per lens, then verify the findings in a real browser and execute the fixes. Use when a site "doesn't flow", feels incoherent across screen sizes, or is due a full design and quality pass. Trigger with /fe-sweep.
 ---
 
+> **CSS baseline:** whenever this skill writes or reviews styles, also invoke the `good-css` skill if it is installed and follow its techniques. Where they conflict, this skill decides the look; good-css decides how the CSS is written.
+
 # fe-sweep
 
-Ten lenses over one site, in parallel, then act on what survives.
+Eleven lenses over one site, in parallel, then act on what survives.
 
 This exists because a single reviewer finds what that reviewer looks for. Ten
 independent ones converge on the real defects — and when six of them

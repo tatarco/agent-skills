@@ -1,7 +1,7 @@
 # The lenses
 
 Run each as its own agent. The point is not thoroughness per agent — it is
-**independence**. Ten reviewers who cannot see each other's notes will
+**independence**. Eleven reviewers who cannot see each other's notes will
 converge on the real defects and diverge on taste, and that difference is the
 signal you are actually buying.
 
@@ -15,6 +15,7 @@ Drop any lens that does not exist on the machine. Do not substitute.
 | `impeccable` (`critique <target>`) | heuristic scoring, banned patterns, z-index and token discipline | sonnet |
 | `fe-web-guidelines` | a11y: focus traps, scroll lock, inert, landmarks, contrast | sonnet |
 | `fe-animations` + `web-perf` | easing, durations, layout-animating properties, image weight, LCP | sonnet |
+| `fe-apple-design` | Apple-style feel: press feedback latency, interruptible springs, enter/exit symmetry, size-specific tracking/leading, reduced-motion/transparency, and the 'italic serif + cream old-money background' Claude tell | sonnet |
 | `frontend-design:frontend-design` | aesthetic point of view — is it committed, is it memorable | sonnet |
 | `fe-design-interface` | information architecture and per-audience user journeys | sonnet |
 | `minimalist-ui` + `fe-brutalist-ui` | what to cut, and where the design is too polite for the subject | sonnet |
